@@ -227,8 +227,8 @@ def form_contractor(edges,input_tensors,output_tensor):
 
     output_name, output_size = output_tensor
     return make_contractor_from_implicit_joins(
-        [[e[input_name+str(index)] for index in xrange(1,input_size+1)] for (input_name,input_size) in input_tensors],
-        [e[output_name+str(index)] for index in xrange(1,output_size+1)],
+        [[e[input_name+str(index)] for index in xrange(input_size)] for (input_name,input_size) in input_tensors],
+        [e[output_name+str(index)] for index in xrange(output_size)],
     )
 #@-node:gcross.20100923134429.1879:form_contractor
 #@-node:gcross.20100923134429.1900:Functions

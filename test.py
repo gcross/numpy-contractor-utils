@@ -47,8 +47,8 @@ class TestCase(unittest.TestCase):
 class matrix_vector_product(TestCase):
     contractor = staticmethod(
         form_contractor([
-            ("M1","V'1"),
-            ("M2","V1"),
+            ("M0","V'0"),
+            ("M1","V0"),
         ], [
             ("M",2),
             ("V",1),
