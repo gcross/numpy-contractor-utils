@@ -214,7 +214,7 @@ def crand(*shape):
     return rand(*shape)*2-1+rand(*shape)*2j-1j
 #@-node:gcross.20100923134429.1877:crand
 #@+node:gcross.20100923134429.1879:form_contractor
-def form_contractor(edges,input_tensors,output_tensor):
+def form_contractor(input_tensors,edges,output_tensor):
     e = {}
 
     for index, (v1, v2) in enumerate(edges):
