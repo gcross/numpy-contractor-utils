@@ -60,9 +60,32 @@ class matrix_vector_product(TestCase):
         M = crand(m,n)
         v = crand(n)
         self.assertAllClose(dot(M,v),self.contractor(M,v))
-
-
 #@-node:gcross.20100923134429.1888:matrix_vector_product
+#@+node:gcross.20101005155450.1290:left_contractor
+class left_contractor(TestCase):
+    contractor = staticmethod(
+        form_contractor([
+            ("L",2),
+            ("S",3),
+            ("T",3),
+        ],[
+            ("L0","S1"),
+            ("L1","T1"),
+            ("S2","T2"),
+            ("S0","L'0"),
+            ("T0","L'1"),
+        ], ("L'",1)
+        ))
+
+    @with_checker(number_of_calls=10)
+    def test(self,a=irange(1,5),b=irange(1,5)...):
+        L = crand(a,b)
+        S = crand(b,c,d)
+        T = crand(...)
+        LS = tensordot(...)
+        LST = tensordot(...)
+        self.assertAllClose(LST,self.contractor(M,v))
+#@-node:gcross.20101005155450.1290:left_contractor
 #@-node:gcross.20100923134429.1886:Tests
 #@-others
 
